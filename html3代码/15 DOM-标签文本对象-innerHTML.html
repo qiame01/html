@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			文本
+			<h1>子标签文本1</h1>
+			<div>子标签文本2</div>
+		</div>
+	</body>
+</html>
+<script>
+	var box = document.getElementById("box");
+	
+	console.log(box.innerHTML);//获取标签内的全部内容：文本和各种子标签======================================
+	box.innerHTML = "<h3>子标签文本3</h3>";//修改标签内的全部内容（可改成标签与文本）==========================
+	console.log(box.innerHTML);//再次查看
+	
+	/*innerHTML常用，而innerText不常用*/
+/*	console.log(box.innerText);//只获取文本（标签内及其子标签内的）=========================================
+	box.innerText = "<h3>子标签文本4</h3>";//修改标签内的全部内容（只能改成文本，且会将标签格式也当做文本显示）=============
+	console.log(box.innerText);*/
+</script>

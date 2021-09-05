@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height: 50px;
+				background: pink;
+			}
+			span{
+				width: 100px;
+				height: 50px;
+				background: pink;
+			}
+			
+			a{
+				width: 100px;
+				height: 50px;
+				background: skyblue;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			块元素
+				盒子实体化：宽、高、背景色
+				特点：
+					1.一行只能存在一个
+					2.支持宽高的设置（由行内元素转化成的块元素立刻可以支持宽高设置）
+					3.如果没有设置宽属性，默认占整行
+				代表：div p h1 h2 h3 h4 h5 h6 ul li ol...
+			
+			行内元素
+				特点：
+					1.不支持宽高的设置（设置了也无效）
+					2.一行可以存在多个
+					3.大小由内容决定
+				代表：span a b i...
+				
+			显示模式的转换：
+				转成块：display:block;  下面的a标签是行内元素，点击百度才有效，而点击周围空白区域无效，用block转成块元素后，方才可以，且支持宽高设置
+				转成行内：display:inline;
+				js中做盒子隐藏：display:none;
+			
+		-->
+		<div>1</div>
+		<div>2</div>
+		<hr />
+		
+		<span>今天天气</span>
+		<span>今天天气</span>
+		<hr />
+		
+		<div>
+			<a href="#">百度</a> 
+		</div>
+	</body>
+</html>

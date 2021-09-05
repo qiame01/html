@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			div{
+				width: 100px;
+				height: 100px;
+				border: 2px solid #000;
+			}
+			.box1 div{
+				margin: 50px 0 0 50px;
+			}
+			li{
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				border-radius: 50%;
+				border: 1px solid #000;
+				float: left;
+				margin: 350px 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<br />
+		<input type="button" id="b1" value="parent：box3直接父级变色" />
+		<input type="button" id="b2" value="parents：在box3所有直系父级中选中某直系父级box1变色" />
+		<input type="button" id="b3" value="siblings：列表2的所有同级变色" />
+		<input type="button" id="b4" value="children：box1下一级子级变色" />
+		<input type="button" id="b5" value="find：box1下某二级子级变色" /> <br /><br />
+		<input type="button" id="b6" value="next：box3父级的下一个同级变色" /> 
+		<input type="button" id="b7" value="before：box5父级的上一个同级变色" />
+		<input type="button" id="b8" value="empty：清空box4下文本和子标签" />
+		<input type="button" id="b9" value="filter：筛选任意元素" />
+		
+		<br /><br />
+		 
+		<div class="box1">box1-一级
+			<div class="box2">box2-二级
+				<div class="box3">box3-三级</div>
+			</div>
+			<div class="box4">box4-二级
+				<div class="box5">box5-三级</div>
+			</div>
+		</div>
+		
+		<ul>
+			<li>1</li>
+			<li class="lis">2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+	var aInput = $("input"); 
+	//parents、siblings、children：括号里加选择器，表示全部元素，不加，则表示全部结果中的某个指定元素
+	
+	aInput.eq(0).click(function(){ //只能选中第一层直系父级元素这一个======================
+		$(".box3").parent().css("background","green");
+	})
+	
+	aInput.eq(1).click(function(){ //只能选中直系父级。不加选择器：选中所有直系父级；加：选中某个直系父级。非直系的选不到======================
+		$(".box3").parents(".box1").css("background","green");
+	})
+	
+	aInput.eq(2).click(function(){ //选中除自己以外的所有同级元素，括号里可加选择器指定具体元素========================
+		$(".lis").siblings().css("background","green");
+	})
+	
+	aInput.eq(3).click(function(){ //选中一级子级（二级子级则无法选中），括号里可加选择器指定具体元素===========================
+		$(".box1").children().css("background","green");
+	})
+	
+	aInput.eq(4).click(function(){ //选中任意级子级（一级或二级），括号里可加选择器指定具体元素===========================
+		$(".box1").find(".box5").css("background","green");//选中某级的某个子级
+//		$(".box1").find("*").css("background","green");//*匹配全部子级，但优先级最低
+	})
+	
+	aInput.eq(8).click(function(){ //筛选任意元素===========================
+		$("li").filter(".lis").css({"font-size":"30px"});//单个样式
+		$("li").filter(".lis").css({"color":"pink","background":"yellow"});//多个样式
+	})
+	
+	aInput.eq(5).click(function(){ //下一个同级元素，另有nextAll======================
+		$(".box3").parent().next().css("background","yellow");
+	})
+	
+	aInput.eq(6).click(function(){ //上一个同级元素，另有prevAll======================
+		$(".box5").parent().prev().css("background","blue");
+	})	
+	
+	aInput.eq(7).click(function(){ //清空标签里的所有文本和子标签======================
+		$(".box4").empty();
+
+	})	
+
+
+		
+		
+</script>

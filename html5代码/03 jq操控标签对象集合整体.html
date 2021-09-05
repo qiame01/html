@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="按钮1" />
+		<input type="button" value="按钮2" />
+	</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+/*	var aInput = document.getElementsByTagName("input");//js获取元素对象集合整体后，无法操控整体，只能使用遍历来操控整体========
+	for(var i=0;i<aInput.length;i++){
+		aInput[i].onclick = function(){//遍历时，为每一个元素添加事件，这些元素的事件存放在内存中，点击就会触发
+			console.log(this.getAttribute("value"));//注意这里只能用this，不能用aInput[i]
+		}
+	}
+	aInput[0].onmouseover = function(){//js操控整体中个体：整体对象[索引]
+		console.log("js操控整体中个体");
+	}*/
+	
+	
+	var aInput = $("input");//赋值，提高复用性。jq获取元素对象集合整体，可操控整体=============================================
+	aInput.click(function(){
+		console.log("jq操控整体");
+	})
+	aInput.eq(1).mouseover(function(){//jq操控整体中个体：整体对象.eq(索引)
+		console.log("jq操控整体中个体");
+	})
+</script>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <!--兼容处理，让ie以edge的内核进行解析-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--
+    	视口标签	meta:vp+tab	移动端默认的视口大小是980px
+    	width=device-width	让我们的页面宽度等于设备宽度
+    	initial-scale=1		默认的缩放比例为100%		0.5	= 放大两倍
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--兼容处理，让ie8兼容HTML5的特性-->
+    
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--Respond.js不可以放在本地，必须放在web服务器上运行-->
+    
+    <!--条件注释-->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    	.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
+    		padding: 0;
+    	}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+    	<!--header-->
+    	<div class="row">
+    		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" style="margin-top:10px;">
+    			<img src="img/logo2.png"/>
+    		</div>
+    		<div class="col-lg-6 col-md-6 visible-lg visible-md" style="margin-top:10px;">
+    			<img src="img/header.png"/>
+    		</div>
+    		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" style="line-height: 80px;">
+    			<a href="#">登录</a>
+    			<a href="#">注册</a>
+    			<a href="#">购物车</a>
+    		</div>
+    	</div>
+    	<!--nav-->
+    	<div class="row">
+				<nav class="navbar navbar-inverse" style="margin-bottom: 0;">
+				  <div class="container-fluid">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header">
+				    	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				      <a class="navbar-brand" href="#">首页</a>
+				    </div>
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      <ul class="nav navbar-nav">
+				        <li class="active"><a href="#">手机数码 <span class="sr-only">(current)</span></a></li>
+				        <li class="visible-lg"><a href="#">电脑办公</a></li>
+				        <li class="visible-lg"><a href="#">汽车用品</a></li>
+				        <li class="visible-lg"><a href="#">生活用品</a></li>
+				        <li class="dropdown hidden-lg">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多 <span class="caret"></span></a>
+				          <ul class="dropdown-menu">
+				            <li><a href="#">电脑办公</a></li>
+						        <li><a href="#">汽车用品</a></li>
+						        <li><a href="#">生活用品</a></li>
+				          </ul>
+				        </li>
+				      </ul>
+				      <form class="navbar-form navbar-right">
+				        <div class="form-group">
+				          <input type="text" class="form-control" placeholder="Search">
+				        </div>
+				        <button type="submit" class="btn btn-default">Submit</button>
+				      </form>
+				      </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+				</nav>
+    	</div>
+    	<!--banner-->
+    	<div class="row">
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				  <!-- Indicators -->
+				  <ol class="carousel-indicators">
+				    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				  </ol>
+				
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner" role="listbox">
+				    <div class="item active">
+				      <img src="img/1.jpg" alt="...">
+				    </div>
+				    <div class="item">
+				      <img src="img/2.jpg" alt="...">
+				    </div>
+				    <div class="item">
+				      <img src="img/3.jpg" alt="...">
+				    </div>
+				  </div>
+				
+				  <!-- Controls -->
+				  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				  </a>
+				</div>
+    	</div>
+    	<!--热门商品-->
+    	<div class="row">
+    		<h1>
+    			热门商品
+    			<img src="img/title2.jpg"/>
+    		</h1>
+    	</div>
+    	<div class="row">
+    		<div class="col-lg-2 visible-lg">
+    			<img src="img/big01.jpg" width="100%" />
+    		</div>
+    		<div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
+    			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 225px;">
+    				<img src="img/middle01.jpg" width="100%" height="100%" />
+    			</div>
+    			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center" style="height: 225px;">
+    				<img src="img/small03.jpg" alt="" />
+    				<p style="font-size: 16px;">平底锅</p>
+    				<p style="font-size: 30px;color:red;">&yen;899.00</p>
+    			</div>
+    			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center" style="height: 225px;">
+    				<img src="img/small03.jpg" alt="" />
+    				<p style="font-size: 16px;">平底锅</p>
+    				<p style="font-size: 30px;color:red;">&yen;899.00</p>
+    			</div>
+    			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center" style="height: 225px;">
+    				<img src="img/small03.jpg" alt="" />
+    				<p style="font-size: 16px;">平底锅</p>
+    				<p style="font-size: 30px;color:red;">&yen;899.00</p>
+    			</div>
+    			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center" style="height: 225px;">
+    				<img src="img/small03.jpg" alt="" />
+    				<p style="font-size: 16px;">平底锅</p>
+    				<p style="font-size: 30px;color:red;">&yen;899.00</p>
+    			</div>
+    			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center" style="height: 225px;">
+    				<img src="img/small03.jpg" alt="" />
+    				<p style="font-size: 16px;">平底锅</p>
+    				<p style="font-size: 30px;color:red;">&yen;899.00</p>
+    			</div>
+    			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center" style="height: 225px;">
+    				<img src="img/small03.jpg" alt="" />
+    				<p style="font-size: 16px;">平底锅</p>
+    				<p style="font-size: 30px;color:red;">&yen;899.00</p>
+    			</div>
+    			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center" style="height: 225px;">
+    				<img src="img/small03.jpg" alt="" />
+    				<p style="font-size: 16px;">平底锅</p>
+    				<p style="font-size: 30px;color:red;">&yen;899.00</p>
+    			</div>
+    			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center" style="height: 225px;">
+    				<img src="img/small03.jpg" alt="" />
+    				<p style="font-size: 16px;">平底锅</p>
+    				<p style="font-size: 30px;color:red;">&yen;899.00</p>
+    			</div>
+    			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center" style="height: 225px;">
+    				<img src="img/small03.jpg" alt="" />
+    				<p style="font-size: 16px;">平底锅</p>
+    				<p style="font-size: 30px;color:red;">&yen;899.00</p>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<img src="img/footer.jpg" width="100%" />
+    	</div>
+    	<div class="row">
+    		<!--防止关键字堆砌-->
+    		<ul class="list-inline text-center">
+    			<li><a href="#">联系我们</a></li>
+    			<li><a href="#">联系我们</a></li>
+    			<li><a href="#">联系我们</a></li>
+    			<li><a href="#">联系我们</a></li>
+    			<li><a href="#">联系我们</a></li>
+    			<li><a href="#">联系我们</a></li>
+    			<li><a href="#">联系我们</a></li>
+    			<li><a href="#">联系我们</a></li>
+    		</ul>
+    	</div>
+    	<div class="row">
+    		<p class="text-center">Copyright &copy; 2005-2016 传智商城 版权所有</p>
+    	</div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

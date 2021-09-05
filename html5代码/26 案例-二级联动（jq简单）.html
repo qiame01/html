@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<select id="province">
+			<option value="none">--请选择省--</option>
+			<option value="0">北京市</option>
+			<option value="1">上海市</option>
+			<option value="2">广州市</option>
+		</select>
+		<select id="city">
+			<option value="none">--请选择市--</option>
+			<!--<option value="none"></option>-->
+		</select>
+	</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+	var cities = [
+		["朝阳区","海淀区","石景山区","昌平区"],
+		["浦东新区","闵行区","奉贤区","静安区"],
+		["白云区","番禺区","天河区","花都区"]
+	]
+	//change
+	var province = $("#province");
+	var city = $("#city");
+	
+	province.change(function(){
+		
+		//city.html("<option value='none'>--请选择市--</option>");
+		city[0].options.length = 1;
+		
+		var i = $(this).val();
+		
+		$(cities[i]).each(function(){
+			//console.log(this);
+			var newOption = "<option>"+this+"</option>";
+			console.log(newOption);
+			city.append(newOption);
+		})
+		
+	})
+	
+</script>

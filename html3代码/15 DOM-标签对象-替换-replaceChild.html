@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		您喜欢的城市:<br> 
+	   	<ul id="city">
+	   	 	<li id="bj" value="beijing">北京</li>
+			<li id="sh" value="shanghai">上海</li>
+			<li id="cq" value="chongqing">重庆</li>
+	   	</ul>
+	  
+	  	您喜欢的游戏:<br> 
+	   	<ul>
+	   	 	<li id="fk" value="fankong">反恐</li>
+			<li id="ms" value="moshou">魔兽</li>
+			<li id="cq" value="chuanqi">传奇</li>
+	   	</ul>
+	</body>
+</html>
+<script>
+	
+	var old = document.getElementById("bj");
+	
+/*	var new = document.getElementById("fk");//replaceChild(a,b):点击北京a， 剪切前者替换后者=====================================
+	var city = document.getElementById("city");
+	bj.onclick = function(){
+		city.replaceChild(new,old);
+	}*/
+	
+	
+	var new2 = fk.cloneNode(true);//点击北京，复制前者替换后者。cloneNode() 默认只克隆标签和标签属性，没有文本。加 true 则同时复制文本=================
+	old.onclick = function(){
+		city.replaceChild(new2,old);
+	}
+</script>

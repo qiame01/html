@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			li{
+				list-style: none;
+				width: 200px;
+				height: 100px;
+				background: skyblue;
+				border: 1px solid green;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="list">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+	$('.list>li').click(function(){
+		console.log($(this).index());//返回当前单击的索引值
+		console.log($('.list>li').index());
+		console.log($('span').index());
+		
+	})
+</script>

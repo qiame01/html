@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="js事件" id="jsEvent" /> <br/><br/>
+		<input type="button" value="jq事件" id="jqEvent" /> <br/><br/>
+		<input type="button" value="jq事件bind" id="jqEventBind" /> <br/><br/>
+		<input type="button" value="jq事件bind多个:移入移出/单击:" id="jqEventBindMore" /> <br/><br/>
+		<input type="button" value="jq事件切换:移入移出" id="jqEventSwitch" /> <br/><br/>
+		<input type="button" value="jq事件切换(简写):单击" id="jqEventSwitch2" /> <br/><br/>
+	</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+	var btn = document.getElementById("jsEvent"); //js事件：事件源.事件类型=执行指令==================
+	btn.onclick = function(){
+		console.log("jsEvent");
+	}
+	
+	$("#jqEvent").click(function(){ //jq事件方式1：事件源.事件类型(执行指令)。所有的事件类型都不允许加on===========
+		console.log("jqEvent");
+	})
+	
+	$("#jqEventBind").bind("click",function(){//jq事件方式2：绑定一个事件===================================
+		console.log("jqEventBind"); //不加分号也没事，为了规范，一般加上
+	});
+	
+	$("#jqEventBindMore").bind({//jq事件方式2：绑定多个事件=========================================
+		"click":function(){console.log("jqEventBindMore:click");},
+		"mouseover":function(){console.log("jqEventBindMore:mouseover");},
+		mouseout:function(){console.log("jqEventBindMore:mouseout");}//不加引号也没事，为了规范，一般加上
+	});
+	
+/*	$("#jqEventBindMore").unbind("mouseover");//jq事件方式2：解绑指定事件=================================
+	$("#jqEventBindMore").unbind();//jq事件方式2：解绑所有事件=========================================
+	*/
+	
+	$("#jqEventSwitch").hover(function(){//jq事件方式2：事件切换(只用于hover类型)=================
+		//第一个函数，等同于mouseover事件，鼠标移入会执行
+		console.log("jqEventSwitch:mouseover");
+	},function(){
+		//第二个函数，等同于mouseout事件，鼠标移出会执行
+		console.log("jqEventSwitch:mouseout");
+	});
+	
+/*	var num = 0;
+	$("#jqEventSwitch2").hover(function(){//jq事件方式2：事件切换简写(只用于hover类型)===================
+		//只写一个函数，代表鼠标移入和移出分别执行一次这里的js语句
+		console.log("jqEventSwitch:"+num++);
+	})*/
+	
+</script>

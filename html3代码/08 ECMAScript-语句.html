@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			table{
+				border-collapse: collapse;/*合并边框*/
+				width: 600px;
+				text-align: center;
+			}
+			td{
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+				if(){...}
+				if(){...}else{...}
+				if(){...}else if(){...}else{...}
+				
+				switch(表达式){
+					case value1: break;
+					case value2: break;
+					default:
+				}
+
+				while(){...}
+				
+				do{...}while()
+				
+				for(var i = 0;i < 100;i++){...}
+				
+				
+								
+			parseInt()  不会四舍五入的取整,把类型转换成数值型
+			Math.round();
+			console.log(i); 以日志的形式在控制台输出
+			document.write(); 往文档中写入数据
+				
+			
+		-->
+	</body>
+</html>
+<script>
+	/*
+		需求：对学生成绩划分，使用if完成：
+		90分以上    优秀    
+		80分以上	良好    
+		60分以上	及格    
+		60分以下    不及格
+	*/
+	/*var score = 88;
+	if(score>=90){
+		alert("优秀");
+	}else if(score>=80){
+		alert("良好");
+	}else if(score>=60){
+		alert("及格");
+	}else{
+		alert("不及格");
+	}*/
+	
+
+	/*
+		需求：对学生成绩划分，使用switch完成：
+		90分以上    优秀    
+		80分以上	 良好    
+		60分以上	 及格    
+		60分以下    不及格  
+	*/
+	//var score = 100;
+	//var num = parseInt(score / 10);
+	
+	//var i = '123.12';
+	
+	//var a = parseInt(i);
+	
+	//alert(parseInt(4.8));4
+	//alert(Math.round(4.8));
+	
+	//alert(typeof i);
+	//alert(typeof a);
+	
+	/*switch (num){
+		case 10:
+		case 9:
+			alert("优秀");
+			break;
+		case 8:
+			alert("良好");
+			break;
+		case 7:
+		case 6:
+			alert("及格");
+			break;
+		default:
+			alert("不及格");
+			break;
+	}*/
+
+
+	//需求：计算1~10的和		while
+	/*var sum = 0;
+	var count = 1;
+	while(count<=10){
+		sum += count;//sum = sum + count;
+		count++;
+	}
+	alert(sum);*/
+	
+
+
+	//需求：计算1~10的和		do while
+	/*var sum = 0;
+	var count = 1;
+	do{
+		sum += count;//sum = sum + count;
+		count++;
+	}while(count<=10);
+	
+	alert(sum);*/
+	
+	
+	
+	//需求：统计1~100 之间能够被3和7整除的数字个数
+	/*var count = 0;
+	for(var i=1;i<=100;i++){
+		//alert(i);
+		//console.log(i);
+		if(i%3==0&&i%7==0){
+			count++;
+			console.log(i);	
+		}
+		
+	}
+	console.log(count);*/
+	
+	document.write("ssss");
+	console.log(1111111);	
+	//需求：循环嵌套完成九九乘法表，并将其打印到页面上
+	//document.write("<h1>12345</h1>");
+	//1*1=1 2*1=2
+	
+	//1.把1-9全部循环出来
+	/*for(var i = 1; i < 10; i++){
+		
+		for(var j = 1; j <= i; j++){
+			
+			document.write(i+"*"+j+"="+(i*j)+"&nbsp;&nbsp;");
+			
+		}
+		
+		document.write("<br>");
+		
+	}*/
+	
+	//把九九乘法表放在table里面
+	//table>tr>td
+/*	document.write("<table cellpadding='0' cellspacing='0'>");
+	for(var i = 1; i < 10; i++){
+		
+		document.write("<tr>");
+		
+		for(var j = 1; j <= i; j++){
+			
+			//document.write(i+"*"+j+"="+(i*j)+"&nbsp;&nbsp;");
+			document.write("<td>"+i+"*"+j+"="+(i*j)+"</td>");
+			
+		}
+		
+		document.write("</tr>");
+		
+	}
+	document.write("</table>");*/
+
+</script>

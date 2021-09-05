@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form name="form1" action="test.html" method="post">
+  	   	  	<input type="text" name="tname" value="传智播客5周年_1"  id="tid_1"><br>
+		 	<input type="text" name="tname" value="传智播客5周年_2"  id="tid_2"><br>
+			<input type="text" name="tname" value="传智播客5周年_3"  id="tid_3"><br>
+			<input type="button" name="ok" value="保存1"/>
+  	 	</form>
+	
+	   	<select name="edu" id="edu">
+	   	  	<option value="博士" selected="selected">博士</option>
+			<option value="硕士">硕士</option>
+			<option value="本科" >本科</option>
+		  	<option value="幼儿园">幼儿园</option>
+	   	</select>
+	   
+	   	<select name="job" id="job" >
+	   	  	<option value="美容">美容</option>
+			<option value="程序员">程序员</option>
+			<option value="建筑师">建筑师</option>
+	   	</select>
+	   
+	   	<input type="button" value="点击输出下拉框被选中的值"/>
+	   	
+	   	<div id="demo"></div>
+	</body>
+</html>
+<script>
+    //获取所有的input元素,返回值是数组==========================================================================================
+   	var aInput = document.getElementsByTagName("input");
+    console.log(aInput.length);
+	for(var i=0;i<aInput.length;i++){
+		//console.log(aInput[i].value);
+	}
+	
+    //输出type="text"中 value属性的值
+    for(var i=0;i<aInput.length;i++){
+    	if(aInput[i].type == "text"){
+			//console.log(aInput[i].value);
+    	}
+	}
+    
+   	//输出所有下拉选框select的option标签中value的值==============================================================================
+   	var aOption = document.getElementsByTagName("option");
+   	for(var i=0;i<aOption.length;i++){
+// 		console.log(aOption[i].value);
+   	}
+   	
+    //输出下拉选框 id="edu"中option标签中 value属性的值  ==========================================================================
+    var edu = document.getElementById("edu");
+    var e_optiopn = edu.getElementsByTagName("option");
+    console.log(e_optiopn.length);
+    for(var i=0;i<e_optiopn.length;i++){
+// 		console.log(e_optiopn[i].value);
+   	}
+    
+    //输出所有下拉选框option标签中 value属性的值  =================================================================================
+    var e_optiopn_all = document.getElementsByTagName("option");
+    console.log(e_optiopn_all.length);
+    for(var i=0;i<e_optiopn.length;i++){
+// 		console.log(e_optiopn[i].value);
+   	}
+    
+</script>

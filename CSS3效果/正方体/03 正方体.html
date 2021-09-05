@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        body{
+            perspective: 500px;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            /*border: 1px solid #000;*/
+            margin: 100px auto;
+            /*perspective: 500px;*/
+            transform-style: preserve-3d;
+            position: relative;
+            transition: transform 2s;
+        }
+        .box:hover{
+            transform: rotateX(720deg) rotateY(720deg);
+        }
+        .box li{
+            width: 200px;
+            height: 200px;
+            background: url(images/01.png);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        /*正面*/
+        .box li:nth-child(1){
+            transform: translateZ(100px);
+        }
+        /*背面*/
+        .box li:nth-child(2){
+            transform: translateZ(-100px);
+        }
+        /*顶部*/
+        .box li:nth-child(3){
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        /*底部*/
+        .box li:nth-child(4){
+            transform: rotateX(90deg) translateZ(-100px);
+        }
+        /*右侧*/
+        .box li:nth-child(5){
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        /*左侧*/
+        .box li:nth-child(6){
+            transform: rotateY(90deg) translateZ(-100px);
+        }
+    </style>
+</head>
+<body>
+    <ul class="box">
+        <!-- 正面 -->
+        <li></li>
+        <!-- 背面 -->
+        <li></li>
+        <!-- 顶部 -->
+        <li></li>
+        <!-- 底部 -->
+        <li></li>
+        <!-- 右侧 -->
+        <li></li>
+        <!-- 左侧 -->
+        <li></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>专门用于class属性的方法</title>
+		<style>
+			.box{
+				width: 200px;
+				height: 200px;
+				background: pink;
+			}
+			.bgcolor{
+				background: skyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<input type="button" value="btn1" />
+		<input type="button" value="btn2" />
+		<input type="button" value="btn3" />
+		<input type="button" value="btn4" />
+	</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+	var aInput = $("input");
+	
+	aInput.eq(0).click(function(){//添加(或追加)class========================
+		$(".box").addClass("bgcolor");
+	})
+	aInput.eq(1).click(function(){//删除class=============================
+		$(".box").removeClass("bgcolor");
+	})
+	aInput.eq(2).click(function(){//切换class(有则删，无则加)=============================
+		$(".box").toggleClass("bgcolor");
+	})
+	aInput.eq(3).click(function(){//判断是否存在某class=============================
+		console.log($(".box").hasClass("bgcolor"));
+	})
+</script>

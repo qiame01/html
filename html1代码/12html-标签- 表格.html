@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			布局
+			早期的布局都是用表格来写的		div+css
+			展示数据
+			
+			table	表格标签	默认是不显示边框
+			tr	行标签
+			td	单元格标签
+			th	首行标题	加粗，居中
+		
+			
+				border 	边框
+				width	宽度
+				height	高度
+				cellspacing	单元格与单元格之间的距离
+				cellpadding	单元格与内容之间的距离
+				
+				align	水平对齐方式	left  center  right	不建议使用
+				
+				bgcolor	背景色	不建议使用
+				
+				
+				合并单元格
+					
+					colspan	跨列（左右）
+						
+					rowspan	跨行（上下）
+					
+				步骤：
+					1.请先书写一个完整的表格
+					2.再考虑合并的问题
+					3.被合并掉的格子必须手动删除
+					
+			
+			<table border="1" width="600">
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<th></th>
+				</tr>
+			</table>
+		-->
+		<table>
+			<thead>
+				
+			</thead>
+			<tfoot>
+				
+			</tfoot>
+			<tbody>
+				<tr>
+					<th>
+						
+					</th>
+					<td>
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table border="1" width="600" cellspacing="10" cellpadding="10" align="center" bgcolor="darkseagreen">
+			<tbody>
+				<tr bgcolor="palevioletred">
+					<th>ID</th>
+					<th>name</th>
+					<th>number</th>
+				</tr>
+				<tr align="center">
+					<td>001</td>
+					<td bgcolor="lightseagreen"><font color="red">张三</font></td>
+					<td>1888888888</td>
+				</tr>
+				<tr>
+					<td>002</td>
+					<td align="center">李四</td>
+					<td>144444</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<table border="1" width="600" height="400">
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="2"></td>
+				<!--<td></td>-->
+				<td></td>
+				<td rowspan="2"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<!--<td></td>-->
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+	</body>
+</html>

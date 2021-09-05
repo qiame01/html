@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>专门用于value属性的方法</title>
+	</head>
+	<body>
+		<input type="text" id="text" value="请输入内容" />
+		<input type="button" value="Click" id="btn" />
+	</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+	//val()
+	var btn = $("#btn");
+	var _text = $("#text");
+	btn.click(function(){
+		console.log(_text.val());//括号里无参，即为获取。等价于prop("value")================
+	})
+	_text.val("123");//括号里有参，即为修改（只会改变显示效果，不会修改value的原属性值）=================
+</script>

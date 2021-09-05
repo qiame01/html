@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 200px;
+				height: 200px;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" style="width:200px;height:200px;background:blue;"></div>
+	</body>
+</html>
+<script>
+	var box = document.getElementById("box");
+	
+	console.log(box.style.width);//只能获取行内css，上面的内嵌式css无法获取，故常用jq==============================
+	console.log(box.style.height);
+	console.log(box.style.backgroundColor);
+	
+/*	box.style.width = "400px";//修改css样式，有单位的要加单位================================================================
+	box.style.height = "400px";
+	//如果属性由多个单词使用“-”连接，需要将“-”删除，并将后一个单词首字母大写。例如：font-size 需要改成 fontSize
+	box.style.backgroundColor = "skyblue";*/
+	
+</script>

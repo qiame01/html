@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.list{
+				width: 400px;
+				margin: 50px auto;
+			}
+			.list li{
+				list-style: none;
+				height: 50px;
+				line-height: 50px;
+				border-bottom: 1px dashed #ccc;
+			}
+			.list a{
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="list">
+			<li>
+				商品信息1
+				<a href="#">删除</a>
+			</li>
+			<li>
+				商品信息2
+				<a href="#">删除</a>
+			</li>
+			<li>
+				商品信息3
+				<a href="#">删除</a>
+			</li>
+		</ul>
+	</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+	//js
+	//remove()	removeChild()
+	
+	//jq
+	//remove()	完全删除	斩草除根
+	//empty()	清空内容	斩草留根
+	$("a").click(function(){
+		var flag = confirm("你真的要干掉我吗？");
+		if(flag){
+			$(this).parent().remove();
+		}
+		
+		//$(this).parent().empty();
+	})
+</script>

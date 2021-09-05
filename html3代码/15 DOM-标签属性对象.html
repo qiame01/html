@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" id="ddd" value="请输入用户名" class="demo test"/>
+</body>
+</html>
+<script>
+    var element = document.getElementById("ddd");
+
+    element.hasAttribute("name");//是否具有指定属性
+    element.getAttribute("class");//增加、修改、删除、访问属性值：方式1
+    element.setAttribute("class", "AAA");
+    element.setAttribute("name", "");
+    element.setAttribute("class", "");
+    element.removeAttribute("value");//删除属性(注意不是属性值)
+
+    console.log(element.className);//增加、修改、删除、访问属性值：方式2
+    console.log(element.value);
+    element.name = "wukong";
+    element.class = "demo test add";
+    element.value = "";
+    element.className = "";
+
+    console.log(element.className.length);//获取属性值长度
+    console.log(element.id.length);
+    
+</script>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js事件</title>
+	</head>
+	<body>
+		<!--
+			事件三要素：
+				事件源	用户操作的对象
+				事件类型	操作的方式
+				执行指令	发生了什么事情
+				
+			语法格式：
+				事件源.事件类型=执行指令
+				
+			注意：
+				js中所有的事件类型必须加on
+				
+			当我打开开关的时候，灯亮了。
+			事件源	开关
+			事件类型	打开
+			执行指令	灯亮了
+			
+			onload		某个页面或图像被完成加载，常用于页面加载函数（入口函数）
+						window.onload = function(){ 只有页面中其他元素全部加载完成之后才会执行 }
+				
+			onsubmit	当表单提交时触发该事件---注意事件源是表单form
+			
+			onclick		鼠标点击某个对象
+			
+			onblur		元素失去焦点，通常针对表单元素
+			
+			onfocus		元素获得焦点，通常针对表单元素
+			
+			onchange	用户改变域的内容，通常针对表单元素
+			
+			onmouseover	鼠标被移到某元素之上
+				:hover
+			
+			onmouseout	鼠标从某元素移开
+			
+		-->
+		<input type="button" id="a" value="click1" onclick="ss(99);" /> <br /> <!--js写在行内就是一个简写的事件-->
+
+		<form action="" id="myForm">
+			<input type="text" name="" id="text" />
+			<input type="submit" value="点击" id="btn"/>
+		</form>
+		
+	</body>
+</html>
+<script>
+
+	function ss(param) {//简写js事件============================
+		alert("a" + param);
+	}
+	
+
+	window.onload = function(){//onload（js入口函数）============================
+		var oBox = document.getElementById("box");
+		console.log(oBox);
+		alert("入口函数是在页面内容全部加载完毕后才执行的")
+	}
+	var myForm = document.getElementById("myForm");//onsubmit============================
+	myForm.onsubmit = function(){
+		alert("提交");
+	}
+	var _text = document.getElementById("text");//onfocus============================
+	_text.onfocus = function(){
+		console.log("获得焦点")
+	}
+	_text.onblur = function(){//onblur============================
+		console.log("失去焦点")
+	}
+	//onchange
+	_text.onchange = function(){//onchange============================
+		console.log("内容改变了")
+	}
+	_text.onmouseover = function(){//onmouseover============================
+		console.log("鼠标移入了")
+	}
+	_text.onmouseout = function(){//onmouseout============================
+		console.log("鼠标离开了")
+	}
+
+</script>

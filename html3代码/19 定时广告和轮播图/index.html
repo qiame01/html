@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			1.先把整体的页面看成是一个大表格，只分行不分列，6*1
+			2.根据单元格数量的不同，嵌套表格
+		-->
+		<table width="100%" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="img/news.jpg" width="100%" id="myImg" style="display: none;"/>
+				</td>
+			</tr>
+			<tr height="100"><!--logo 1*2-->
+				<td>
+					<table width="100%" cellpadding="0" cellspacing="0">
+						<tr>
+							<td><img src="img/logo.png"/></td>
+							<td align="right"><img src="img/img2.jpg"/></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr height="50"><!--nav-->
+				<td bgcolor="black">
+					<a href="#"><font color="#fff">全部课程</font></a>
+					<a href="#"><font color="#fff">视频下载</font></a>
+					<a href="#"><font color="#fff">公开课</font></a>
+					<a href="#"><font color="#fff">原创教材</font></a>
+					<a href="#"><font color="#fff">师资力量</font></a>
+					<a href="#"><font color="#fff">校区汇总</font></a>
+					<a href="#"><font color="#fff">报名流程</font></a>
+					<a href="#"><font color="#fff">线上学院</font></a>
+					<a href="#"><font color="#fff">技术社区</font></a>
+				</td>
+			</tr>
+			<tr><!--banner-->
+				<td><img src="img/1.jpg" width="100%" id="banner"/></td>
+			</tr>
+			<tr><!--title-->
+				<td><h2>校园环境</h2></td>
+			</tr>
+			<tr><!--pic 2*5-->
+				<td>
+					<table width="100%" cellpadding="0" cellspacing="0">
+						<tr>
+							<td colspan="2" rowspan="2"><img src="img/img3.jpg" width="100%"/></td>
+							<td rowspan="2"><img src="img/img4.jpg" width="100%"/></td>
+							<td><img src="img/img5.jpg" width="100%"/></td>
+							<td><img src="img/img6.jpg" width="100%"/></td>
+						</tr>
+						<tr>
+							<td><img src="img/img7.jpg" width="100%"/></td>
+							<td><img src="img/img8.jpg" width="100%"/></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr height="50"><!--copy-->
+				<td bgcolor="#000" align="center">
+					<font color="#fff" size="1">江苏传智播客教育科技有限公司 版权所有Copyright 1999-2016, CSDN.NET, All Rights Reserved 苏ICP备16007882</font>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
+<script>
+	//过2秒图片显示，再过2秒图片隐藏
+	var myImg = document.getElementById("myImg");
+	setTimeout(function(){
+		myImg.style.display = "block";
+		setTimeout(function(){
+			myImg.style.display = "none";
+		},2000)
+	},2000)
+	
+	//图片的切换
+	//<img src="img/1.jpg" width="100%" id="banner"/>
+	//1 2 3
+	var banner = document.getElementById("banner");
+	var num = 1;
+	setInterval(function(){
+		num++;
+		if(num>3){
+			num = 1;
+		}
+		banner.src = "img/"+num+".jpg";
+	},1000)
+</script>

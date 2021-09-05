@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            list-style: none;
+        }
+        .box{
+            width: 620px;
+            margin: 100px auto 0;
+            border: 1px solid #333;
+            padding-bottom: 10px;
+        }
+        .list{
+            overflow: hidden;/*溢出隐藏，也可以用来清除浮动*/
+        }
+        .list li{
+            width: 33.3333%;
+            height: 45px;
+            float: left;
+        }
+        .list li a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 45px;
+            text-decoration: none;
+            color: #333;
+        }
+        .btn{
+            width: 200px;
+            height: 25px;
+            margin: 0 auto;
+            border: 1px solid #333;
+            text-align: center;
+            line-height: 25px;
+            color: #333;
+            font-size: 12px;
+            cursor: pointer;
+            background: url(img/down.gif) no-repeat 30px center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <ul class="list">
+            <li><a href="javascript:;">佳能</a></li>
+            <li><a href="javascript:;">索尼</a></li>
+            <li><a href="javascript:;">三星</a></li>
+            <li><a href="javascript:;">尼康</a></li>
+            <li><a href="javascript:;">松下</a></li>
+            <li><a href="javascript:;">卡西欧</a></li>
+            <li><a href="javascript:;">富士</a></li>
+            <li><a href="javascript:;">柯达</a></li>
+            <li><a href="javascript:;">宾得</a></li>
+            <li><a href="javascript:;">理光</a></li>
+            <li><a href="javascript:;">奥林巴斯</a></li>
+            <li><a href="javascript:;">明基</a></li>
+            <li><a href="javascript:;">其它品牌相机</a></li>
+        </ul>
+        <div class="btn">显示所有内容</div>
+    </div>
+    <!--<div style="width: 200px;height: 200px;border: 1px solid #000;overflow:hidden;">
+    	呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜
+    </div>-->
+</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+	//reset
+	$(".list>li:gt(2):not(:last)").hide();
+	
+	//点击div
+	//1.隐藏的下拉显示
+	//2.div的内容发生改变
+	//3.div的背景图片发生改变
+	var btn = $(".btn");
+	//定义一个变量来记录AB两个状态
+	var flag = 1;
+	
+	btn.click(function(){
+		$(".list>li:gt(2):not(:last)").stop().slideToggle();
+		if(flag){
+			$(this).html("隐藏所有内容").css("background-image","url(img/up.gif)");
+			flag = 0;
+		}else{
+			$(this).html("显示所有内容").css("background-image","url(img/down.gif)");
+			flag = 1;
+		}
+	})
+</script>

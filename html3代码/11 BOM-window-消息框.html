@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			警告框：alert();
+			确认框：confirm();	true false
+			提示框：prompt();	true false
+			
+			格式：对象.方法名();  window对象可以省略对象名
+			window.open("http://www.baidu.com");
+			window.close();
+			对比：location.href = "http://www.baidu.com";
+		-->
+	</body>
+</html>
+<script>
+/*	window.alert();
+	alert("凡是window对象都可省略");*/
+	
+	
+	var flag = confirm("你是否真的要离开我！");
+	console.log(flag);
+	if(flag){
+//		window.open("http://www.baidu.com");
+//		window.close();
+		
+	}
+	
+	
+	var a = prompt("请输入你的姓名：","例如：张三");
+	console.log(typeof a);
+	console.log(a);
+
+	
+</script>

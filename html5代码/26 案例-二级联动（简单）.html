@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<select id="province">
+			<option value="none">--请选择省--</option>
+			<option value="0">北京市</option>
+			<option value="1">上海市</option>
+			<option value="2">广州市</option>
+		</select>
+		<select id="city">
+			<option value="none">--请选择市--</option>
+			<!--<option value="none"></option>-->
+		</select>
+	</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+	var cities = [
+		["朝阳区","海淀区","石景山区","昌平区"],
+		["浦东新区","闵行区","奉贤区","静安区"],
+		["白云区","番禺区","天河区","花都区"]
+	]
+	//onchange
+	var province = document.getElementById("province");
+	var city = document.getElementById("city");
+	province.onchange = function(){
+		//alert();
+		//为了保证数据的准确，每一次在加载之前先清空一次
+		//city.innerHTML = "<option value='none'>--请选择市--</option>";
+		city.options.length = 1;
+		
+		//获取当前选择的option的value
+		var _value = this.value;
+		//console.log(_value);
+		//cities[_value]
+		
+		//第一种方式
+		/*for(var i =0;i<cities[_value].length;i++){
+			
+			//console.log(cities[_value][i]);
+			//<option>cities[_value][i]</option>
+			var newOption = "<option>"+cities[_value][i]+"</option>";
+			//city.appendChild(newOption);
+			city.innerHTML += newOption;
+			
+		}*/
+		
+		//第二种方式
+		/*for(var i =0;i<cities[_value].length;i++){
+			
+			//var newOption = "<option>"+cities[_value][i]+"</option>";
+			//city.innerHTML += newOption;
+			var newOption = document.createElement("option");
+			newOption.innerHTML = cities[_value][i];
+			city.appendChild(newOption);
+			
+		}*/
+		
+		//第三种方式
+		for(var i =0;i<cities[_value].length;i++){
+			
+			//var newOption = "<option>"+cities[_value][i]+"</option>";
+			//city.innerHTML += newOption;
+			//var newOption = document.createElement("option");
+			//newOption.innerHTML = cities[_value][i];
+			//city.appendChild(newOption);
+			var newOption = new Option(cities[_value][i]);
+			//console.log(newOption);
+			city.options.add(newOption);
+			
+		}
+	}
+</script>

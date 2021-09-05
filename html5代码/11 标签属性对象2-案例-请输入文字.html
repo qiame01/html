@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+	        *{
+	            margin: 0;
+	            padding: 0;
+	            border: 0;
+	            list-style: none;
+	        }
+	        .box{
+	            height: 40px;
+	            width: 258px;
+	            margin: 100px auto 0;
+	        }
+	        .box input{
+	            float: left;
+	            width: 210px;
+	            padding-left: 6px;
+	            height: 40px;
+	            background: url(img/left.jpg);
+	            color: #ccc;
+	        }
+	        .box button{
+	            float: right;
+	            width: 42px;
+	            height: 40px;
+	            background: url(img/right.jpg);
+	        }
+    	</style>
+	</head>
+	<body>   
+	    <div class="box">
+	        <input type="text" value="请输入文字..." />
+	        <button></button>
+	    </div>
+	</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+	var oInput = $("input");
+	//1.获取焦点的时候
+	//清空value，改变文字color
+	
+	//2.失去焦点的时候
+	//还原value，还原文字的color
+	oInput.focus(function(){
+		/*$(this).val("");
+		$(this).css("color","#000");*/
+		//针对同一个事件源进行的一系列操作，可以通过.语法写在一行上面，称之为链式编程
+		if($(this).val()=="请输入文字..."){
+			$(this).val("").css("color","#000");
+		}
+	}).blur(function(){
+		//不可以把用户输入的内容还原
+		if($(this).val()==""){
+			$(this).val("请输入文字...").css("color","#ccc");
+		}
+
+	})
+	
+</script>

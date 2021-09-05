@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<!--<body>-->
+		<!--
+			<frameset>
+				<frame />	只能通过src引入内容
+			</frameset>
+			
+				如果单击frame中的链接，希望在另一个frame里面展示内容
+				那么需要给对应区域的frame加一个name
+				然后把name给到链接的target属性身上
+			
+				noresize	禁止区域被拖拽
+				
+				cols	左右
+				rows	上下
+				
+				*代表的是剩余的宽度
+			
+			注意：
+				1.不能与body共存
+		-->
+		<!--<frameset cols="40%,60%">
+			<frame src="left.html" />
+			<frame src="img.html" />
+		</frameset>-->
+		<frameset rows="33%,11%,*" noresize>
+			<frame src="left.html" />
+			<frame src="img.html" />
+			<frame />
+		</frameset>
+	<!--</body>-->
+</html>

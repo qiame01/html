@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<select id="province">
+			<option value="none">--请选择省--</option>
+			<!--<option value="jl">吉林省</option>-->
+		</select>
+		<select id="city">
+			<option value="none">--请选择市--</option>
+			<!--<option value="cc">长春</option>-->
+		</select>
+	</body>
+</html>
+<script src="js/cities.js"></script>
+<script>
+	//json
+	//数组名.属性名
+	//console.log(china[0].p_name);
+	
+	//把左边的数据加载完整
+	var province = document.getElementById("province");
+	var city = document.getElementById("city");
+	//遍历得到每一组的数据
+	for(var i=0;i<china.length;i++){
+
+		var newOption = "<option value="+china[i].p_id+">"+china[i].p_name+"</option>";
+		
+		//console.log(newOption);
+		
+		province.innerHTML += newOption;
+		
+	}
+	
+	//选择不同的省份，加载对应的区县
+	province.onchange = function(){
+		
+		city.options.length = 1;
+		
+		var j = this.value;
+		
+		//console.log(i);
+		//根据获取到的value，去china里面匹配数据
+		for(var i=0;i<china.length;i++){
+			//比较获取到的value跟哪一组数据匹配
+			if(j == china[i].p_id){
+				//遍历china对应数组的cities
+				for(var k=0;k<china[i].cities.length;k++){
+					
+					//console.log(china[i].cities[k]);
+					
+					var newOption02 = "<option value="+china[i].cities[k].c_id+">"+china[i].cities[k].c_name+"</option>";
+					
+					//console.log(newOption02);
+					city.innerHTML += newOption02;
+				}
+				
+			}
+			
+		}
+		
+	}
+</script>

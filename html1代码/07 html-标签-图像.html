@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			页面中的图片就两种方式
+				标签的格式		右键-图片另存为
+				css的背景图片
+				
+			<img src="图片的路径" />
+				src		必写属性	图片的路径地址
+				width	宽度		默认单位是px
+				height	高度		如果只定义一个，图片会等比例缩放
+				title	提示文本	鼠标放在图片身上的时候
+				alt		替换文本	当图片加载失败的时候才会出现
+				border	边框		只能定义宽度
+				onerror 错误图片（无法正常显示目标图片时展示该错误图片）
+		-->
+		<img src="img/01222.jpg" width="400" onerror="this.src='img/cyhy.jpg'"/>
+		<hr />
+		<img src="img/01.jpg" width="400" title="我是一个大美女"/>
+		<hr />
+		<img src="img/010.jpg" width="400" alt="这里曾经有一个大美女"/>
+		<hr />
+		<img src="img/01.jpg" width="400" border="10"/>
+		
+		
+	</body>
+</html>

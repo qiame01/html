@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box" class="book" title="book">人类简史</div> <br />
+		
+		<input type="checkbox" id="ck" checked="checked" />
+		<input type="button" value="Click" id="btn" />
+		
+		<input type="text" id="text" value="请输入用户名" />
+	</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+	
+	var box = $("#box");
+	var ck = $("#ck");
+	var btn = $("#btn");
+	var _text = $("#text");
+
+	box.attr("name","history");//有则修改，无则添加
+	box.attr("title","");
+	box.attr("class","aa bb cc");
+	box.attr("class");
+		
+	box.attr({});//jq获取属性值(全部)=============================
+	
+
+	box.attr({//jq修改属性值(多个)======================================
+		'class':'myClass',
+		'id':'myId'
+	});
+	
+	box.removeAttr("title");//jq删除属性=================================
+	console.log(box.attr("title"));//F12可见title属性没有了
+	
+	btn.click(function(){//attr():只能获取写死结构中的属性值，无法获取表单中用户输入的动态值============
+		console.log(ck.attr("checked"));//无法获取checked属性的动态值：true/false
+	});
+	
+	btn.click(function(){//prop():针对表单元素，可获取用户动态修改的属性值。函数有参时是修改，无参时是获取=====================
+		console.log(ck.prop("checked"));//可获取checked属性的动态值：true/false
+	});
+	
+	btn.click(function(){
+		console.log(_text.prop("value"));//获取表单value属性的动态值
+//		console.log(_text.prop({}));//获取全部
+	});
+	btn.click(function(){//prop()重新给属性赋值==========================================
+		console.log(_text.prop("value"));
+		_text.prop("value","未来简史");//只会改变显示效果，不会改变value的原属性值（同val()方法）
+		console.log(_text.prop("value"));
+	});
+	
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--on类事件和bind类事件，只是一个单词的差别，可以互相替换-->
+	</head>
+	<body>
+		<input type="button" value="Click"/>
+		<input type="button" value="Click"/>
+	</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+	//on类事件和bind类事件，只是一个单词的差别，把这里的on改成bind，off改成unbind，完全可以======================
+	var aInput = $("input");
+
+	//on(或bind)和click的用法区别：原事件能否作用于新增的标签================================================================
+	//只要原事件的顺序位于新增的标签之后，且选择器使用的是$("input")，而不是赋值后的aInput，则原事件就对新标签有效
+	//但是不可能每次都能保证这个顺序，因此，这时就要使用on方式了
+
+	$("input").click(function(){//测试1：click：原事件对新增标签无效
+		console.log("点击了！");
+	});
+	$("input").on("click",function(){//测试2：on：原事件对新增标签也无效
+		console.log("点击了！");
+	});
+	
+	$("body").on("click","input",function(){//测试3：on：有效，且可保证不受先后顺序的影响——正解
+		console.log("点击了！");
+	});
+	
+	var newBtn = "<input type='button' value='Click3'/>";//新增标签，同时想让该标签也获得现有事件的效果（注意单双引号要交替使用）
+	$("body").append(newBtn);
+
+	
+</script>

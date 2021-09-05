@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.big{
+				height: 50px;
+				border-bottom: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<!--测试1==============================================================================-->
+		<!--为什么2的底线上去了，但2这个数字没有上去？-->
+	<!--	<div class="big" style="height: auto;border-bottom: 1px solid blue;">
+			<div style="height: 50px;width: 50%;float:left;"></div>
+			<div style="height: 50px;width: 50%;float:right;"></div>
+		</div>
+		<div class="big" style="border-bottom: 1px solid green;">22</div>
+		<div class="big">3</div>-->
+		
+		<!--测试2==============================================================================-->
+
+		<div class="big" style="height: auto;">
+			<div style="height: 50px;width: 50%;background: pink;float:left;"></div>
+			<div style="height: 50px;width: 50%;background: deeppink;float:right;"></div>
+			<div style="clear: both;"></div>
+		</div>
+		<div class="big">2</div>
+		<div class="big">3</div>
+		<div class="big">4</div>
+		<div class="big">
+			<div style="width: 40%;height: 50px;background: pink; float:left;"></div>
+			<div style="width: 20%;height: 50px;background: skyblue;float:left;"></div>
+			<div style="width: 40%;height: 50px;background: deeppink;float:left;">
+				<div style="width: 50%;height: 25px;float:left;">1</div>
+				<div style="width: 50%;height: 25px;float:left;">2</div>
+				<div style="width: 50%;height: 25px;float:left;">3</div>
+				<div style="width: 50%;height: 25px;float:left;">4</div>
+			</div>
+		</div>
+		<div class="big">6</div>
+		
+	</body>
+</html>

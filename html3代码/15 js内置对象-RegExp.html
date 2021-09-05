@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	//^：行开始    $： 行结尾
+	var reg1 = new RegExp("\\d");//需要转义，不推荐
+	var reg = /\d/;//推荐
+	var str = "123456";
+	
+	var reg = /^\d/;//必须以数字开头
+	var str = "a123456";
+	
+	var reg = /\d$/;//必须以数字结尾
+	var str = "a123456";
+	
+	var reg = /^\d{5}$/;//必须全是数字，其次长度为5
+	var str = "a123456";
+	
+	var reg = new RegExp("^\\w{4,12}$");//校验用户名必须是4~12位字母数字下划线的组合(正则对象)
+	var str = "a123456";
+	
+	console.log(reg.test(str));//false
+
+</script>

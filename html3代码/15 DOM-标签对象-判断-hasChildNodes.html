@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="tname" value="传智播客10周年_1"  id="tid_1"><br>
+		
+		<select name="edu" id="edu">
+	   	  	<option value="博士" selected="selected">博士</option>
+			<option value="硕士">硕士</option>
+			<option value="本科" >本科</option>
+			<option value="幼儿园">幼儿园</option>
+	   	</select>
+	   	
+	   	<p id="aaa"></p>
+	   	<p id="bbb"> </p>
+	   	<p id="ccc">
+	   		
+	   	</p>
+	</body>
+</html>
+<script>
+	
+	var edu = document.getElementById("edu");//只要双标签之间有内容（空格、换行、标签、文本），就看做有子节点
+	console.log(edu.hasChildNodes());//true
+	
+	var tid_1 = document.getElementById("tid_1");//单标签无子节点
+	console.log(tid_1.hasChildNodes());//false
+	
+	var box = document.getElementById("aaa");//只要双标签之间有内容（空格、换行、标签、文本），就看做有子节点
+	console.log(box.hasChildNodes());//false
+	var box = document.getElementById("bbb");
+	console.log(box.hasChildNodes());//true
+	var box = document.getElementById("ccc");
+	console.log(box.hasChildNodes());//true
+</script>

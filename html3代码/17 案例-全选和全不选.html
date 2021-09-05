@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table id="tab1" border="1" width="800" align="center" style="text-align: center;">
+			<tr>
+				<td colspan="5" align="left">
+					<input id="uncheckBtn" type="button" value="全不选">
+					<input id="reverseBtn" type="button" value="反选">
+				</td>
+			</tr>
+			<tr>
+				<th><input id="all" type="checkbox"></th>
+				<th>分类ID</th>
+				<th>分类名称</th>
+				<th>分类描述</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="itemSelect"></td>
+				<td>1</td>
+				<td>手机数码</td>
+				<td>手机数码类商品</td>
+				<td><a href="javascript:;">修改</a>|<a href="javascript:;">删除</a></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="itemSelect"></td>
+				<td>2</td>
+				<td>电脑办公</td>
+				<td>电脑办公类商品</td>
+				<td><a href="javascript:;">修改</a>|<a href="javascript:;">删除</a></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="itemSelect"></td>
+				<td>3</td>
+				<td>鞋靴箱包</td>
+				<td>鞋靴箱包类商品</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="itemSelect"></td>
+				<td>4</td>
+				<td>家居饰品</td>
+				<td>家居饰品类商品</td>
+				<td><a href="javascript:;">修改</a>|<a href="javascript:;">删除</a></td>
+			</tr>
+		</table>
+	</body>
+</html>
+<script>
+	//全选================================================================
+	var all = document.getElementById("all");
+	var itemSelect = document.getElementsByClassName("itemSelect");
+	
+	all.onclick = function(){
+		//alert();
+		//存储自身是否选中的状态，然后跟下面四个同步起来即可
+		var status = this.checked;
+		
+		for(var i=0;i<itemSelect.length;i++){
+			
+			itemSelect[i].checked = status;
+			
+		}
+	}
+	
+	//全不选================================================================
+	var uncheckBtn = document.getElementById("uncheckBtn");
+	uncheckBtn.onclick = function(){
+		//alert();
+		for(var i=0;i<itemSelect.length;i++){
+			
+			itemSelect[i].checked = false;
+			
+		}
+		all.checked = false;
+	}
+	
+	//反选================================================================
+	var reverseBtn = document.getElementById("reverseBtn");
+	reverseBtn.onclick = function(){
+		//alert();
+		for(var i=0;i<itemSelect.length;i++){
+			//1.第一种
+			/*if(itemSelect[i].checked==true){
+				itemSelect[i].checked=false;
+			}else{
+				itemSelect[i].checked=true;
+			}*/
+			
+			//2.第二种
+			//itemSelect[i].checked = !itemSelect[i].checked;
+			
+			//3.第三种
+			//可以让元素模拟一次鼠标单击事件
+			itemSelect[i].click();
+		}
+		
+		
+	}
+	
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+	    <input type="button" value="开始" />
+	    <input type="button" value="停止" />
+	    <h1>谁是幸运儿</h1>
+	</body>
+</html>
+<script>
+	var _name = ["熙凤","湘云","宝玉","妙玉","黛玉","黛玉","黛玉","黛玉"];//抽奖案例=================================
+	
+	//单击按钮，随机去数组里面取值
+	//0 - 8   0.01 1.1 2.1 3.1 4.1 5.1 6.1 7.1
+	var _click = document.getElementsByTagName("input");
+	var oH = document.getElementsByTagName("h1");//注意处理id方式外，其他方式返回的都是数组
+	
+	var timer;
+	_click[0].onclick = function(){//点击开始
+		clearInterval(timer);//每次开启定时器前先清除定时器，不然越走越快
+		timer = setInterval(function(){
+			var i = parseInt(Math.random() * _name.length);//乘以数组长度，可保证取整后的i不超过数组长度
+			oH[0].innerHTML = _name[i];
+		},30)
+	}
+	
+	_click[1].onclick = function(){//点击停止
+		clearInterval(timer);
+	}
+	
+</script>
+<script>//Math的部分方法========================================================
+	console.log(Math.random());//0 < i < 1的小数
+	console.log(Math.ceil(2.11));//3
+	console.log(Math.floor(2.22));//2
+	console.log(Math.min(1,2,3));//1
+	console.log(Math.round(5.3));//5
+	console.log(Math.round(5.5));//6
+</script>

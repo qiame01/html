@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        .box{
+            text-align: center;
+            padding-top: 150px;
+            font-size: 120px;
+            color: #336699;
+        }
+        .box span{
+            position: relative;
+            perspective: 500px;
+        }
+        .box i{
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-style: normal;
+        }
+        .box .middle{
+            color: rgba(0, 0, 0, 0.2);
+            transform: scale(1.1, 1);
+            transform-origin: left;
+            transition: transform 0.5s;
+
+            /*font-size: 150px;*/
+        }
+        .box .top{
+            color: #fff;
+            /*transform: scale(0.9, 1);*/
+            transform-origin: left;
+            transform: rotateY(-20deg);
+            transition: transform 0.5s;
+        }
+        .box span:hover .top{
+            transform: rotateY(-40deg);
+        }
+        .box span:hover .middle{
+            transform: skewY(15deg) scale(0.8,1);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span>
+            好
+            <i class="middle">好</i>
+            <i class="top">好</i>
+        </span>
+        <span>
+            好
+            <i class="middle">好</i>
+            <i class="top">好</i>
+        </span>
+        <span>
+            学
+            <i class="middle">学</i>
+            <i class="top">学</i>
+        </span>
+        <span>
+            习
+            <i class="middle">习</i>
+            <i class="top">习</i>
+        </span>
+    </div>
+</body>
+</html>

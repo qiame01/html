@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.list>li{
+				list-style: none;
+				width: 200px;
+				height: 100px;
+				border: 2px solid #000;
+				background: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="list">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<ul class="list">
+			<li>1</li>
+		</ul>
+		<span></span>
+	</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+	//index():返回的是当前元素在html结构中相对与他父亲的位置,从0开始。如果页面中匹配不到该元素，返回-1，代表出错了======
+	$(".list>li").click(function(){
+		var i = $(this).index();
+		console.log($("span").index());//2：因为相对于父元素body，span的相对位置索引为2（即第三个）
+	})
+</script>

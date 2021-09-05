@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			算术运算符
+				+ - * / % ++ --
+				
+				注意：
+					1.字符串可以通过+和任意数据类型重新拼接成一个全新的字符串
+					
+					2.字符串做除了+以外的运算，如果本身是一个数字，那么会自动转换成数值型进行运算
+						如果本身不是一个数字，那么返回NaN
+						
+			比较运算符	返回的结果true false
+				< > >= <= == === !=
+					
+			逻辑运算符
+				&&	全部都为true
+					左侧为false，返回左侧
+					左侧为true，返回右侧
+					
+				||	只要有一个为true
+					左侧为false，返回右侧
+					左侧为true，返回左侧
+				
+				
+				!	取反
+				
+			js中对true和false的定义：
+				false:0 null undefined
+				true:非0 null undefined
+				
+			三元运算符
+				表达式？A:B
+					true,A
+					false,B
+					
+		-->
+	</body>
+</html>
+<script>
+//	alert(1+1);//2   js中的小数和整数都是number类型，不存在类似java整数除以整数还是整数的结论 =========================================
+//	alert(1/2);//0.5
+//	alert(1%2);//1
+//	alert(1/0);//Infinity 无穷大
+//	alert(typeof Infinity);//number
+	
+//	alert(1.2+'1');//1.21   字符串和任何类型的数据使用+号运算，都会拼接成一个新的字符串==================================================
+//	alert(true+'1');//true1
+	
+//	alert(1-'我');//字符串使用除了+以外的运算符：如果字符串本身是一个数字，那么会自动转成number进行运算，否则就会返回一个NaN，表示NaN not a number======
+//	alert("k"-1);
+//	alert("12" / 6);//2	
+//	alert(1-'1'); 
+//	alert(typeof NaN);//number
+	
+	
+//	alert(6>2);//false   关系运算符返回的结果只有两个：true / false===================================================================
+//	alert("6">2);//true
+//	alert(1>"hh");//false
+//	alert(1=='1');//true  等于（只比较内容,不比较数据类型）
+//	alert(1==='1');//false 恒等于（比较内容的同时还要比较数据类型）
+	
+//	alert(1>2&&2<3);//false  逻辑运算符：&&、||、！================================================================================
+//	alert(1<2&&2<3);//true  针对&&顺口溜:左边为真,返回右边;左边为假,返回左边
+//	alert(1>2||2<3);//true  针对||顺口溜:左边为真,返回左边;左边为假,返回右边
+//	alert(1>2||2>3);//false
+//	alert(!true);//false
+	
+//	alert(0&&1);//0    注意：非0非null非未定义就是true，反之为false。。很常用
+//	alert(0&&null);//0
+//	alert(-1&&1);//1
+//	alert(null&&-1);//null
+	
+//	alert(0||1);//1
+//	alert(0||null);//null
+//	alert(-1||1);//-1
+//	alert(null||-1);//-1
+	
+//	alert( 3? "aaa" : "bbb" ); // aaa
+//	alert( 0? "ccc" : "ddd"); // ddd
+
+
+</script>

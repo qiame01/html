@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.big{
+				width: 600px;
+				border: 2px solid red;
+			}
+			.big .small1,
+			.big .small2{
+				width: 200px;
+				height: 200px;
+				background: pink;
+				float: left;
+			}
+			.big .small2{
+				background: skyblue;
+				height: 300px;
+			}
+			.borther{
+				height: 100px;
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="big">
+			<div class="small1"></div>
+			<div class="small2"></div>
+			
+			<div style="clear:both;"></div>
+		</div>
+		
+		<div class="borther"></div>
+		
+	</body>
+</html>

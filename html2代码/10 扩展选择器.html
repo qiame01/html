@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3种扩展选择器</title>
+		<style>
+			.father li{
+				color: red;
+			}
+			
+			div,
+			#test,
+			.test,
+			ul li{
+				color: green;
+			}
+			
+			input[type="text"]{
+				background: red;
+			}
+			.pwclass[type="password"]{
+				background: yellow;
+			}
+
+		</style>
+	</head>
+	<body>
+		
+		<!--
+			后代选择器
+				标签关系必须是嵌套的
+				父级选择器  子级选择器{...}
+				
+				注意：中间必须有一个空格！
+			
+			并集选择器
+				优化代码，减少冗余
+				
+				通过逗号把各个选择器连接起来，最后一个选择器后面不要加逗号
+				定义相同的样式
+				
+			属性选择器
+				选择器[属性="值"]{...}
+		-->
+		
+		<!--后代选择器-->
+		<ol class="father">
+			<li>文体</li>
+			<li>文体</li>
+			<p class="test2">音乐</p>
+		</ol> <br /><br />
+		
+		<!--并集选择器-->
+		<div>aaa</div>
+		<div id="test">bbb</div>
+		<p class="test">ccc</p>
+		<ul>
+			<li>ddd</li>
+			<div>eee</div>
+		</ul> <br /><br />
+		
+		<!--属性选择器-->
+		<input type="text" />
+		<input type="password" class="pwclass" />
+		<input type="password" class="pwclass" />
+		
+		
+	</body>
+</html>

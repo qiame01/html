@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="改变透明度" />
+		<div class="box">
+			<img src="img/01.gif"/>
+		</div>
+		<div style="height: 50px;background: pink;"></div>
+	</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+	//只是改变盒子的透明度，不能显示和隐藏盒子
+	//fadeTo(时间，透明度)
+	$("input").click(function(){
+		$(".box").stop().fadeTo(1000,0);
+	})
+</script>

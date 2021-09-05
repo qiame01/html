@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>我的jquery表单校验页面</title>     
+		<style type="text/css">
+			p{text-align: center;font-size:24px;}
+			table{margin: 0 auto;border: 0;}
+			table tr{height:40px;border:0;}
+			table tr td{padding:0 14px;border:1px solid #999}
+			.error{color:red;}
+		</style>
+</head>
+<body>
+    <p>员工信息录入</p>
+	<form name="empForm" id="empForm" method="get" action="test.html">
+		<table border=1>
+			<tr>
+				<td>真实姓名(不能为空 )</td>
+				<td><input type="text" id="realname" name="realname" />
+				</td>
+			</tr>
+			<tr>
+				<td>登录名(登录名不能为空,长度在5-8之间):</td>
+				<td><input type="text" id="username" name="username" /></td>
+			</tr>
+			 <tr> 
+		      <td>密码(不能为空,长度在6-12之间):</td>
+		      <td><input type="password" id="psw"  name="psw" /></td>
+		    </tr>
+		    <tr> 
+		      <td>重复密码密码(不能为空,长度在6-12之间):</td>
+		      <td><input type="password" id="psw2" name="psw2" /></td>
+		    </tr>
+		    <tr>
+				<td>性别(必选其一)</td>
+				<td>
+				    <input  type="radio" id="gender_male" value="m" name="gender"/>&nbsp;男&nbsp;&nbsp;
+				    <input  type="radio" id="gender_female" value="f" name="gender"/>&nbsp;女
+				    <label id="gender-error" class="error" for="gender"></label>
+				</td>
+			</tr>
+			<tr>
+				<td>年龄(必填26-50):</td>
+				<td><input type="text" id="age" name="age" /></td>
+			</tr>	
+		    <tr> 
+		      <td>你的学历:</td>
+		      <td> <select name="edu" id="edu">
+			          <option value="">－请选择你的学历－</option>
+			          <option value="a">专科</option>
+			          <option value="b">本科</option>
+			          <option value="c">研究生</option>
+			          <option value="e">硕士</option>
+			          <option value="d">博士</option>
+		          </select>
+			  </td>
+		   </tr>	
+			<tr> 
+              <td>出生日期(1982/09/21):</td>
+               <td><input type="text" id="birthday"  name="birthday" value="" /></td>
+           </tr>		
+		   <tr> 
+		      <td>兴趣爱好:</td>
+		      <td colspan="2"> 
+			      <input type="checkbox" name="checkbox1" id="qq1"/>&nbsp;乒乓球 &nbsp;
+		          <input type="checkbox" name="checkbox1" id="qq2" value="1" />&nbsp;羽毛球 &nbsp;
+		          <input type="checkbox" name="checkbox1" id="qq3" value="2" />&nbsp;上网 &nbsp;
+		          <input type="checkbox" name="checkbox1" id="qq4" value="3" />&nbsp;旅游 &nbsp;
+		          <input type="checkbox" name="checkbox1" id="qq5" value="4" />&nbsp;购物 &nbsp;
+		          <label id="checkbox1-error" class="error" for="checkbox1"></label>
+			  </td>
+		    </tr>
+			 <tr> 
+			      <td align="left">电子邮箱:</td>
+			      <td><input type="text" id="email" name="email" /></td>
+			  </tr>
+			  <tr> 
+			      <td align="left">身份证(15-18):</td>
+			      <td><input type="text" id="cart" name="cart" /></td>
+			  </tr>
+			<tr>
+				<td></td>
+				<td><input type="submit"  name="firstname"  id="firstname" value="保存"></td>
+			</tr>
+	</table>
+</form>
+</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script>
+	$.validator.addMethod("cartLength",function(value,element,params){
+		/*console.log(value);//用户输入的value
+		console.log(element);//标签本身
+		console.log(params);//规则传递的值*/
+		//15 18
+		if(value.length == 15 || value.length == 18){
+			return true;
+		}
+	},"长度不正确");
+	
+	$.validator.addMethod("cartFormat",function(value,element,params){
+		/*console.log(value);//用户输入的value
+		console.log(element);//标签本身
+		console.log(params);//规则传递的值*/
+		//15 都是数字
+		//18 都是数字或者最后一个是x X
+		if(value.length == 15){
+			/*var reg = new RegExp();
+			var reg = //;*/
+			var reg1 = /^\d{15}$/;
+			return reg1.test(value);
+		}
+		if(value.length == 18){
+			/*var reg = new RegExp();
+			var reg = //;*/
+			var reg2 = /^\d{18}|\d{17}[x|X]$/;
+			return reg2.test(value);
+		}
+		
+	},"格式不正确");
+	
+	$.validator.addMethod("pswLength",function(value,element,params){
+		//console.log(params[0]);
+		//长度必须在6-12之间，内容必须是纯数字
+		//var reg3 = /^\d{params[0],params[1]}$/;
+		var reg3 = new RegExp("^\\d{"+params[0]+","+params[1]+"}$");
+		return reg3.test(value);
+		//console.log(reg3);
+		
+	},"密码长度必须在{0}-{1}之间");
+	
+	$("#empForm").validate({
+		rules:{
+			realname: "required",
+			username:{
+				required: true,
+				rangelength: [2,10]
+			},
+			psw:{
+				required: true,
+//				rangelength: [6,12]
+				pswLength: [4,6]
+			},
+			psw2:{
+				required: true,
+				rangelength: [6,12],
+				equalTo: "#psw"
+			},
+			gender: "required",
+			age:{
+				required: true,
+				range: [26,50]
+			},
+			edu: "required",
+			birthday:{
+				required: true,
+				dateISO: true
+			},
+			checkbox1: "required",
+			email:{
+				required: true,
+				email: true
+			},
+			cart:{
+				required: true,
+				cartLength: true,
+				cartFormat: true
+			}
+		},
+		messages:{
+			realname: "请输入您的用户名...",
+			username:{
+				required: "登录名不能为空...",
+				rangelength: "长度必须介于{0}-{1}之间"
+			},
+			psw:{
+				required: "密码不能为空...",
+//				rangelength: "长度必须介于{0}-{1}之间"
+			},
+			psw2:{
+				required: "密码不能为空...",
+				rangelength: "长度必须介于{0}-{1}之间",
+				equalTo: "两次密码不一致"
+			},
+			gender: "请选择您的性别",
+			age:{
+				required: "请输入您的年龄",
+				range: "年龄必须介于{0}-{1}之间"
+			},
+			edu: "请选择您的学历",
+			birthday:{
+				required: "请输入您的生日",
+				dateISO: "日期格式不正确"
+			},
+			checkbox1: "请选择您的兴趣爱好",
+			email:{
+				required: "请输入邮箱地址",
+				email: "格式不正确"
+			},
+			cart:{
+				required: "请填写身份证号码"
+			}
+		}
+	})
+</script>

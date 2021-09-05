@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			风花雪月
+			<h1>风花雪月</h1>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+	//jq：html()、text()，等价于js：innerHTML、innerText
+	var box = $("#box");
+	
+	console.log(box.html());//无参即为获取========================================
+	console.log(box.text());
+	
+	box.html("外防输入");//有参即为修改==============================================
+	console.log(box.html());//对于普通文本，则显示文本
+	box.text("内防输出");//对于普通文本，则显示文本
+	console.log(box.text());
+	
+	box.html("<h3>子标签文本4</h3>");//对于标签文本，则显示该标签格式
+	console.log(box.html());
+	box.text("<h3>子标签文本4</h3>");//对于标签文本，仍把标签按照普通文本显示，要注意
+	console.log(box.text());
+	
+</script>

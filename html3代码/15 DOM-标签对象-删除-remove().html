@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			li{
+				list-style: none;/*隐藏列表前端小圆点*/
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="city">
+			<li id="bj">北京</li>
+			<li id="sh">上海</li>
+			<li id="cq">重庆</li>
+		</ul>
+	</body>
+</html>
+<script>
+	
+	var bj = document.getElementById("bj");//remove()======================================
+//	bj.remove();
+
+	
+	var city = document.getElementById("city");//removeChild()==================================
+	
+	var cq = document.getElementById("cq")
+//	city.removeChild(cq);
+	
+	bj.parentNode.removeChild(cq);//removeChild()2====================
+	
+</script>

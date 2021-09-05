@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<a name="测试锚点链接">锚点链接抛锚处</a> <br /><br />
+			
+		换行<br />
+		
+		水平线<hr />
+		
+		<!--Ctrl+/-->
+		添加/删除注释的快捷键都是Ctrl+/,注释只出现在源码中 <br />
+		
+		标题只有6个等级，1级一般用于logo <br />
+		<h1>1级标题</h1>
+		<h2>2级标题</h2>
+		<h3>3级标题</h3>
+		<h4>4级标题</h4>
+		<h5>5级标题</h5>
+		<h6>6级标题</h6>
+		
+		<p>段落标签</p>
+		<p>秦时明月汉时关，万里长征人未还</p>
+		
+		<b>加粗</b> <br />
+		<i>倾斜</i> <br />
+		<font size="7" color="red" face="楷体">文字格式标签：font</font> <br />
+		
+		图片标签：宽高如果只设置其中一项，那么图片会等比例缩放： <br />
+		<img src="img/girl.png" width="400" title="少女" alt="替换文本" border="1"/> <br /><br />
+		
+		无序列表标签：<br />
+		<ul type="circle">
+			<li>aaa</li>
+			<li>aaa</li>
+			<li>aaa</li>
+		</ul>
+		<ul>
+			<li type="a">aaa</li>
+			<li type="1">aaa</li>
+			<li type="square">aaa</li>
+		</ul>
+		
+		有序列表标签：<br />
+		<ol type="1">
+			<li>aaa</li>
+			<li>aaa</li>
+			<li>aaa</li>
+		</ol>
+		<ol type="A">
+			<li>aaa</li>
+			<li>aaa</li>
+			<li>aaa</li>
+		</ol>
+		
+		<a href="http://www.baidu.com" target="_blank">外部链接(要加协议)</a> <br />
+		<a href="javascript:;">空链接1</a> <a href="javascript:void(0);">空链接2</a> <br />
+		<a href="#测试锚点链接">锚点链接1(需要先抛锚)</a> <a href="#">锚点链接2(默认跳转页首)</a> <br /><br />
+		
+		表格标签(暂略。表格标签主要用于展示数据，很少用于布局，布局用div)  <br /><br />
+		
+		框架标签(暂略。框架标签用于布局，现在布局用div)  <br /><br />
+		
+		表单：form标签中，只有有name属性的子标签，该子标签数据才能被浏览器提交到服务器。以下提交到百度的表单，浏览器地址栏将不显示password项 <br />
+		<!--action：提交的路径，没有地址可以写一个#，代表当前页，或者不写-->
+		<form action="http://www.baidu.com" method="get" name="bbbb" >
+			用户名：<input type="text" name="username" /> <br />
+			密码：<input type="password"  /> <br />
+			提交：<input type="submit" value="提交" />
+		</form>
+		<br />
+		 
+		<form action="#" method="get" name="bbbb" >
+			用户名：<input type="text" name="username" /> <br />
+			密码：<input type="password" name="password" /> <br />
+			单选框：<input type="radio" name="sex" value="male" checked="checked" />男
+				 <input type="radio" name="sex" value="female" />女 <br />
+			复选框：<input type="checkbox" name="hobby" value="football" checked="checked" />足球
+				 <input type="checkbox" name="hobby" value="basketball" />篮球 <br />
+			文件上传：<input type="file" name="upload" /> <br />
+			隐藏域：<input type="hidden" name="shopName" /> <br />
+			图片按钮：<input type="image" src="img/girl2.png" onerror="this.src='img/cyhy.jpg'" alt="替换文本" height="20"/> <br />
+			普通按钮：<input type="button" value="普通按钮" /> <br />
+			滑动条:<input type="range" /> <br />
+			
+			下拉列表：
+			<select name="city">
+				<option value="shanghai" selected="selected">上海市</option>
+				<option value="beijing">北京市</option>
+				<option value="guangzhou">广州市</option>
+			</select>
+			<br /><br />
+			
+			文本域：<textarea name="comment" cols="40" rows="5"></textarea> <br />
+			
+			提交：<input type="submit" value="提交" /> <br />
+			重置按钮：<input type="reset" value="重置按钮"/>
+		</form>
+		<br /><br />
+		
+		布局：<br />
+		<div id="name1" class="name"><!--div将纵向空间进行分割，配合选择器可修改样式-->
+			朗玛1
+			<div class="name2 name3">
+				<span id="aaa" class="bbb">朗玛2</span> <!--span将横向空间进行分割，配合选择器可修改样式-->
+				<span id="bbb" class="bbb">朗玛3</span>
+				朗玛4
+			</div>
+			<div class="name2 name3 name4">
+				朗玛5
+			</div>
+			朗玛6
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<br /><br /><br /><br /><br /><br /><br /><br />
+		
+		
+	</body>
+</html>

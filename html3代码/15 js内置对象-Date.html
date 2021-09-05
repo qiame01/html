@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Date类与双12顺计时</title>
+    </head>
+    <body>
+    	<h1 id="time"></h1>
+    </body>
+</html>
+<script>
+	function aaa(){
+		var nowTime = new Date();//创建当前日期时间和指定日期时间的几种方式
+		var pastTime = new Date("2017-12-12 00:00:00");
+		var pastTime2 = new Date("Dec 12,2017 00:00:00");
+//		var pastTime3 = new Date(1970-01-01至今的时间毫秒值);
+		//console.log("当前时间：" + nowTime + "/r/n未来时间：" + futureTime);
+		
+		var timer = (nowTime - pastTime) / 1000; //计算差值，把单位换算成秒
+		var day = parseInt(timer / 86400);//天  parseInt：略尾取整
+		var hour = parseInt(timer % 86400 / 3600);//时
+		var minute = parseInt(timer % 86400 % 3600 / 60);//分
+		var seconds = parseInt(timer % 86400 % 3600 % 60);//秒
+		//console.log(seconds);
+		
+		//document.write("距离双12还有"+day+"天"+hour+"时"+minute+"分"+seconds+"秒");//导致重复写入
+		var time = document.getElementById("time");
+		time.innerHTML = "2017年双12已过去"+day+"天"+hour+"时"+minute+"分"+seconds+"秒";
+	}
+		
+	aaa();//用户刷新时，立即加载，不用等一秒
+	setInterval(aaa,1000);//每秒刷新一次时间
+	
+</script>
+<script>
+	var date = new Date();
+	console.log(date.getFullYear());//以四位数字返回年份
+	console.log(date.getMonth());//返回月份 (0 ~ 11)
+	console.log(date.getDate());//返回一个月中的某一天
+	console.log(date.getDay());//返回一周中的某一天 (0 ~ 6)，0代表周日
+	console.log(date.getHours());//返回小时（0 ~ 23）
+	console.log(date.getMinutes());//返回分钟（0 ~ 59）
+	console.log(date.getSeconds());//返回秒数（0 ~ 59）
+	console.log(date.getTime());//返回 1970 年 1 月 1 日至今的毫秒数
+	
+	console.log(date.toLocaleString());//把Date对象转换为字符串：2020/6/6 下午4:51:20
+	console.log(date.toLocaleDateString());//把Date对象的日期部分转换为字符串：2020/6/6
+	console.log(date.toLocaleTimeString());//把Date对象的时间部分转换为字符串：下午4:51:20
+	console.log(date.toGMTString());//Sat, 06 Jun 2020 08:54:25 GMT
+	document.write("本地格式："+date.toLocaleString()+"<br>");
+</script>

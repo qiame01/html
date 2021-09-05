@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<style>
+			.col-lg-1,.col-xs-1{
+				border: 1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			12栅格
+				把任意一个盒子12等分
+							(<768px)	(≥768px)	 (≥992px)	 (≥1200px)
+				.container-fluid       100%
+				.container	   100%	      750px	        970px	   1170px
+				
+				根据屏幕宽度的不同，一行上面呈现的盒子数量也随之不同
+				
+				col-xs-
+				col-sm-
+				col-md-
+				col-lg-
+				
+				注意：大的不能兼容小的，小的可以兼容大的
+				
+				<div>12
+					<div>6
+						<div></div>6
+						<div></div>6
+					</div>
+					<div></div>6
+				</div>
+				
+		<table>
+			<tr>
+				<td></td>
+			</tr>
+		</table>
+		
+		score = 60
+		
+		90 80 70 60
+		-->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-1 col-md-3 col-sm-6 col-lg-pull-1" style="background: pink;">1111</div>
+				<div class="col-lg-1 col-md-3 col-sm-6" style="background: skyblue;">2</div>
+				<div class="col-lg-1 col-md-3 col-sm-6">3</div>
+				<div class="col-lg-1 col-md-3 col-sm-6">4</div>
+				<div class="col-lg-1 col-md-3 col-sm-6">1</div>
+				<div class="col-lg-1 col-md-3 col-sm-6">2</div>
+				<div class="col-lg-1 col-md-3 col-sm-6">3</div>
+				<div class="col-lg-1 col-md-3 col-sm-6">4</div>
+				<div class="col-lg-1 col-md-3 col-sm-6">1</div>
+				<div class="col-lg-1 col-md-3 col-sm-6">2</div>
+				<div class="col-lg-1 col-md-3 col-sm-6">3</div>
+				<div class="col-lg-1 col-md-3 col-sm-6">4</div>
+			</div>
+		</div>
+		<hr />
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-1">1</div>
+				<div class="col-xs-1">1</div>
+				<div class="col-xs-1">1</div>
+				<div class="col-xs-1">1</div>
+				<div class="col-xs-1">1</div>
+				<div class="col-xs-1">1</div>
+				<div class="col-xs-1">1</div>
+				<div class="col-xs-1">1</div>
+				<div class="col-xs-1">1</div>
+				<div class="col-xs-1">1</div>
+				<div class="col-xs-1">1</div>
+				<div class="col-xs-1">1</div>
+			</div>
+		</div>
+	</body>
+</html>

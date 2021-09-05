@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		/*div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+			float: left;
+			margin-right: 10px;
+		}*/
+		.one{
+			overflow: visible;/*默认值*/
+		}
+		.two{
+			overflow: scroll;/*直接生成x和y的滚动条,不管内容有没有超出*/
+		}
+		.three{
+			overflow: auto;/*自动生成滚动条*/
+		}
+		.four{
+			overflow: hidden;/*溢出隐藏*/
+		}
+	</style>
+</head>
+<body>
+	<!--<input type="text" value="1" />
+	<input type="text" value="12" />
+	<input type="text" value="13" />
+	<input type="text" value="14" />
+	<input type="text" value="15" />-->
+	<!--<div class="one">传智播客传智播客传智播客传智播客传智播客传智播客传智播客传智播客</div>
+	<div class="two"></div>
+	<div class="three">传智播客传智播客传智播客传智播客传智播客传智播客传智播客传智播客</div>
+	<div class="four">传智播客传智播客传智播客传智播客传智播客传智播客传智播客传智播客</div>-->
+	<!--
+		清除浮动
+			谁塌陷了就给谁清除浮动
+	-->
+	<div style="width: 400px;border: 2px solid red;overflow: hidden;">
+		<div style="width: 300px;height: 200px;background: pink;float: left;"></div>
+		<div style="width: 600px;height: 400px;background: green;"></div>
+		<!--<div style="clear:both;"></div>-->
+	</div>
+	<div style="height: 50px;background: green;"></div>
+</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+	/*$("input").click(function(){
+		alert();
+	})*/
+	console.log($("input").val());
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script> <!--使用jQuery，必须先引包-->
+<script>
+	
+	window.onload = function(){ //js入口函数，只允许存在一个，后写的会覆盖先写的。必须等待页面中的所有资源加载完成之后才会执行
+		alert(1);
+	}
+	window.onload = function(){
+		alert(2);
+	}
+	
+
+	$(document).ready(function(){ //jq入口函数，可以书写多个，2种写法。加载速度比js的快，只要标签对加载出来就会开始执行
+		alert(3);
+	})
+	
+	$(document).ready(function(){
+		alert(4);
+	})
+	
+	$(function(){ //jq入口函数写法2
+		alert(5);
+	})
+</script>

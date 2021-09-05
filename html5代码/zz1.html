@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.12.4.min.js"></script>
+	</head>
+
+	<body>
+		<!--<input type="button" id="aa" value="aaa" onclick="fff(this)"/>-->
+		<div id="qq" data-name="信息运动状态" data-user-age="000">ddd</div>
+		
+	</body>
+
+</html>
+<script type="text/javascript">
+	
+	// jq方式=============================
+	var eee = $("#qq")
+	console.log(eee.data("user-age")) // jq获取1：去掉data
+	console.log(eee.data("userAge")) // jq获取2：去掉data后，用驼峰
+	
+	eee.data("user-age","111") //jq修改1：去掉data 
+	eee.data("userAge","222") //jq修改2：去掉data后，用驼峰
+	
+	// js方式1===========================
+	var ggg = document.getElementById("#qq")
+//	console.log(ggg.dataset) //为何无法获取？
+	
+	/*// js方式2：set/get==========================
+	// 注意：set/get这两个方法是js方法，故需要用js对象调用，或将jq对象转换为js对象
+	eee[0].setAttribute("data-name","444") //方式1：原始形式(含data)
+	console.log(eee[0].getAttribute("data-name"))
+	eee[0].setAttribute("dataName","555") //方式2：驼峰形式(含data)
+	console.log(eee[0].getAttribute("dataName"))*/
+	
+</script>

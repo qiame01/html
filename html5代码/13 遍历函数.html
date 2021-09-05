@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul class="list">
+			<li>111</li>
+			<li>222</li>
+			<li>333</li>
+			<li>444</li>
+		</ul>
+	</body>
+</html>
+
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+	var liObj = $(".list>li");//或$("li")
+
+	for(var i = 0;i<liObj.length;i++){//方式1：for循环方式=============================================
+		console.log(liObj[i]);
+	}
+	
+	liObj.each(function(index,element){//方式2：jq对象-each遍历方式，element可以自定义名称如el==========
+		console.log(index);//获取索引值(即相对于父节点的位置编号)
+		console.log(this);//等同于console.log(element);element=this
+//		console.log($(this).html());//获取文本，必须用this。el.html()这种写法不对，这里必须用this
+
+		$(element).css("color","red");//常用this替换这里的element，this=element，都是js对象，因此想要使用JQ的方法，都需要加$()
+//		$(this).css("color","red");//this=element
+	});
+	
+	$.each(liObj, function(index,el) {//方式3：jq全局遍历方式=============================================
+		console.log(index);
+		console.log(el);//常用this替换这里的el，this=element，都是js对象，因此想要使用JQ的方法，都需要加$()
+	});
+	//以上注意：不管哪种遍历方式，遍历的集合中的每一个元素都是JS对象，因此想要使用JQ的方法，都需要加$()==========================
+	//第三种方式是jquery特有的遍历方式，此处的each方法不是某个具体jquery对象的，而是jquery的全局对象的each方法，
+	//实际开发中，常常省略形参index,element，且方法里直接使用$(this)
+	
+
+	
+	
+	
+</script>

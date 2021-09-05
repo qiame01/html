@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#tip{
+				color:red;
+				border: 1px solid #000;
+				width: 400px;
+	
+			}
+			input.submit{
+				background: #69b946;
+			    display: inline-block;
+			    /*
+			     	转成行内块
+			     	img input
+			     	特点：
+			     		1.一行可以存在多个
+			     		2.可以设置大小
+			     * */
+			    height: 52px;
+			    width: 306px;
+			    text-align: center;
+			    cursor: pointer;/*让鼠标的指针变成小手*/
+			    font: 22px/52px "微软雅黑";
+			    color: #fff;
+			    border-radius: 3px;/*圆角属性*/
+			    border-style: solid;
+			    border-width: 1px;
+			    border-color: transparent;/*透明*/
+			    /*border: 1px solid transparent;*/
+			}
+			input.disabled {
+			    background: #f4f9fd;
+			    color: #888;
+			    border-color: #d0dae3;
+			    cursor: default;
+			    outline: none;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="http://www.baidu.com">
+			<input id="kuang" type="checkbox" /> 
+			<label for="kuang">同意"服务条款"和"用户须知"、"隐私权相关政策"</label>
+			<br />
+			<br />
+			<input type="submit" disabled="disabled" class="submit disabled" id="btn"/>
+		</form>
+	</body>
+</html>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+	//单击kuang，判断
+	//如果选中，submit启用，删除一个类名disabled
+	//如果未选中，submit禁用，增加一个类名disabled
+	var kuang = $("#kuang");
+	var btn = $("#btn");
+	kuang.click(function(){
+		//alert();
+		if(kuang.prop("checked")){
+			btn.prop("disabled",false);
+			btn.prop("class","submit");
+		}else{
+			btn.prop("disabled",true);
+			btn.prop("class","submit disabled");
+		}
+	})
+</script>
